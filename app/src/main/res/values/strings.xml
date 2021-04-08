@@ -2,6 +2,8 @@
     <string name="app_name">JuegoDados</string>
     <string name = "nombreJuego"> GREED DICE GAME </string>
     <string name = "tirarDadoTitulo"> ROLL THE DICE </string>
-    <string name = "ok"> Ok </string>
+    <string name = "ok">OK</string>
     <string name = "MensajeAbout"> Práctica 5\nAplicación de juego de dados.\nCreada por Ernesto Vera.</string>
+    <string name = "AboutDados"> Contiene un dado con una cara aleatoria que se usara en el juego balut.</string>
+    <string name = "msjReinicio"> Reiniciado.</string>
 </resources>

@@ -9,10 +9,11 @@
 
     <ImageView
         android:id="@+id/dado6"
-        android:padding="3dp"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="8dp"
+        android:contentDescription="@string/AboutDados"
+        android:padding="3dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/dado5"
@@ -21,51 +22,56 @@
 
     <ImageView
         android:id="@+id/dado5"
-        android:padding="3dp"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="8dp"
+        android:contentDescription="@string/AboutDados"
+        android:padding="3dp"
         app:layout_constraintStart_toEndOf="@+id/dado4"
         app:layout_constraintTop_toTopOf="@+id/dado4"
         app:srcCompat="@drawable/dadocara5" />
 
     <ImageView
         android:id="@+id/dado4"
-        android:padding="3dp"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="8dp"
+        android:contentDescription="@string/AboutDados"
+        android:padding="3dp"
         app:layout_constraintStart_toEndOf="@+id/dado3"
         app:layout_constraintTop_toTopOf="@+id/dado3"
         app:srcCompat="@drawable/dadocara4" />
 
     <ImageView
         android:id="@+id/dado3"
-        android:padding="3dp"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="8dp"
+        android:contentDescription="@string/AboutDados"
+        android:padding="3dp"
         app:layout_constraintStart_toEndOf="@+id/dado2"
         app:layout_constraintTop_toTopOf="@+id/dado2"
         app:srcCompat="@drawable/dadocara3" />
 
     <ImageView
         android:id="@+id/dado1"
-        android:padding="3dp"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="32dp"
+        android:contentDescription="@string/AboutDados"
+        android:padding="3dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/texto"
         app:srcCompat="@drawable/dadocara1" />
 
     <ImageView
         android:id="@+id/dado2"
-        android:padding="3dp"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="8dp"
+        android:contentDescription="@string/AboutDados"
+        android:padding="3dp"
         app:layout_constraintStart_toEndOf="@+id/dado1"
         app:layout_constraintTop_toTopOf="@+id/dado1"
         app:srcCompat="@drawable/dadocara2" />

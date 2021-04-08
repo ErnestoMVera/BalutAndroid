@@ -15,6 +15,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat
 
 
 class MainActivity : AppCompatActivity() {
@@ -50,7 +51,7 @@ class MainActivity : AppCompatActivity() {
         imagenes = Array(6) {index -> findViewById(idImagenes[index])}
         for ((index,imagen) in imagenes.withIndex()) {
             imagen.setOnClickListener(object : View.OnClickListener {
-                override public fun onClick(v : View) {
+                override fun onClick(v : View) {
                     // Si esta seleccionado lo deselecciona.
                     if(dados[index].estaSeleccionado) {
                             dados[index].estaSeleccionado = false
@@ -59,12 +60,14 @@ class MainActivity : AppCompatActivity() {
                     // Si esta deseleccionado lo selecciona.
                     else {
                         dados[index].estaSeleccionado = true
-                        var highlight : Drawable? = applicationContext.getDrawable(R.drawable.highlight);
-                        imagen.setBackground(highlight);
+                        val highlight : Drawable? = ContextCompat.getDrawable(applicationContext, R.drawable.highlight)
+                        imagen.setBackground(highlight)
                     }
                 }
-            });
+            })
         }
+        // Poner los dados en el estado inicial de todos uno.
+        reiniciarDados()
         // Setear el background en azul.
         layout.setBackgroundResource(R.color.azulClaro)
         // Registrar el layour para el menú flotante.
@@ -74,18 +77,18 @@ class MainActivity : AppCompatActivity() {
     /**
      * Función de lanzar los dadso cuando se presiona el botón.
      */
-    public fun tirarDados(v : View) {
+    fun tirarDados(v : View) {
         for((index,dado) in dados.withIndex()) {
             dado.lanzarDado()
-            actualizarDadoInterfaz(imagenes[index], dado.valor);
+            actualizarDadoInterfaz(imagenes[index], dado.valor)
         }
     }
 
     /**
      * Actualizar la interfaz con los dados.
      */
-    public fun actualizarDadoInterfaz(imagen : ImageView, numero : Int) {
-        imagen.setImageDrawable(applicationContext.getDrawable(nombreDados[numero - 1]))
+    fun actualizarDadoInterfaz(imagen : ImageView, numero : Int) {
+        imagen.setImageDrawable(ContextCompat.getDrawable(applicationContext, nombreDados[numero - 1]))
     }
     /**
      * Crear menú flotante.
@@ -126,24 +129,22 @@ class MainActivity : AppCompatActivity() {
                 true
             }
             R.id.reiniciar -> {
-                Toast.makeText(this, "Reiniciar el juego", Toast.LENGTH_SHORT).show()
+                reiniciarDados()
+                Toast.makeText(this, R.string.msjReinicio, Toast.LENGTH_SHORT).show()
                 true
             }
             R.id.about -> {
                 // Crear dialogo de información sobre la aplicación.
-                val alertDialog: AlertDialog? = this.let {
+                val alertDialog: AlertDialog = this.let {
                     val builder = AlertDialog.Builder(it)
                     builder.apply {
                         setMessage(R.string.MensajeAbout)
-                        setNegativeButton(R.string.ok,
-                                DialogInterface.OnClickListener { dialog, id ->
-                                    // Cancelar el dialogo.
-                                })
+                        setNegativeButton(R.string.ok, null)
                     }
                     // Crear el dialogo.
                     builder.create()
                 }
-                alertDialog?.show()
+                alertDialog.show()
                 true
             }
             else -> super.onOptionsItemSelected(item)
@@ -167,6 +168,16 @@ class MainActivity : AppCompatActivity() {
                 true
             }
             else -> super.onContextItemSelected(item)
+        }
+    }
+    /**
+     * Reinicia los dados a su estado original.
+     */
+    fun reiniciarDados() {
+        for ((index,imagen) in imagenes.withIndex()) {
+            imagen.setBackground(null)
+            imagen.setImageDrawable(ContextCompat.getDrawable(applicationContext, R.drawable.dadocara1))
+            dados[index].estaSeleccionado = false
         }
     }
 }
