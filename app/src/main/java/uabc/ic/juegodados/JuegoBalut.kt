@@ -47,7 +47,7 @@ class JuegoBalut {
      * En esta categoria solo se utiliza la suma de los dados.
      * @return El cálculo de la categoria choice del juego de Balut.
      */
-    fun CalcularChoice() : Int {
+    fun calcularChoice() : Int {
         // En esta categoria solo se utiliza la suma de los dados.
         return valoresDados.sum()
     }
@@ -57,7 +57,7 @@ class JuegoBalut {
      * Esta categoria toma en cuenta la cantidad de 4's que aparecen en los dados y las suma.
      * @return El cálculo de la categoria fours del juego de Balut.
      */
-    fun CalcularFours(): Int {
+    fun calcularFours(): Int {
         // Obtener la suma del arreglo tal que si el número es 4 se sume.
         return valoresDados.sumOf { numero  ->
             if(numero == 4) numero
@@ -69,7 +69,7 @@ class JuegoBalut {
      * Esta categoria toma en cuenta la cantidad de 5's que aparecen en los dados y las suma.
      * @return El cálculo de la categoria fives del juego de Balut.
      */
-    fun CalcularFives(): Int {
+    fun calcularFives(): Int {
         // Obtener la suma del arreglo tal que si el número es 5 se sume.
         return valoresDados.sumOf { numero ->
             if(numero == 5) numero
@@ -81,10 +81,10 @@ class JuegoBalut {
      * Esta categoria toma en cuenta la cantidad de 6's que aparecen en los dados y las suma.
      * @return El cálculo de la categoria sixes del juego de Balut.
      */
-    fun CalcularSixes(): Int {
+    fun calcularSixes(): Int {
         // Obtener la suma del arreglo tal que si el número es 6 se sume.
         return valoresDados.sumOf { numero  ->
-            if(numero == 4) numero
+            if(numero == 6) numero
             else 0
         }
     }
@@ -93,7 +93,7 @@ class JuegoBalut {
      * Esta categoria toma en cuenta si los resultados de los dados son una secuencia seguida de numeros.
      * @return El cálculo de la categoria straight del juego de Balut.
      */
-    fun CalcularStraight() : Int {
+    fun calcularStraight() : Int {
         // Revisar que no haya valores duplicados, si no no puede ser un straight.
         if(valoresDados.size != valoresDados.distinct().count()) {
             return 0
@@ -126,7 +126,7 @@ class JuegoBalut {
      * Esta categoria verifica si los 5 dados son iguales.
      * @return El cálculo de la categoria Balut del juego de Balut.
      */
-    fun CalcularBalut(): Int {
+    fun calcularBalut(): Int {
         // Valor de referencia del dado.
         val inicial = valoresDados[0]
         // Si todos los numeros son iguales hay un balut.
@@ -137,5 +137,10 @@ class JuegoBalut {
             return 20 + valoresDados.sum()
         }
         return 0
+    }
+
+    fun calcularTodo() : IntArray {
+        val valores = intArrayOf(calcularFours(), calcularFives(), calcularSixes(), calcularStraight(), calcularFullHouse(), calcularChoice(), calcularBalut())
+        return valores
     }
 }
