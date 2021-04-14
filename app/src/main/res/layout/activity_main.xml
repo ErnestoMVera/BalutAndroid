@@ -8,19 +8,6 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/dado6"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="8dp"
-        android:contentDescription="@string/AboutDados"
-        android:padding="3dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/dado5"
-        app:layout_constraintTop_toTopOf="@+id/dado5"
-        app:srcCompat="@drawable/dadocara6" />
-
-    <ImageView
         android:id="@+id/dado5"
         android:layout_width="50dp"
         android:layout_height="50dp"
@@ -57,7 +44,7 @@
         android:id="@+id/dado1"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="72dp"
         android:layout_marginTop="32dp"
         android:contentDescription="@string/AboutDados"
         android:padding="3dp"

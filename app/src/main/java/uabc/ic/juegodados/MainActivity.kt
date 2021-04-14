@@ -35,11 +35,10 @@ class MainActivity : AppCompatActivity() {
             R.id.dado2,
             R.id.dado3,
             R.id.dado4,
-            R.id.dado5,
-            R.id.dado6
+            R.id.dado5
     )
     // Array de objetos de tipo dado.
-    private var dados : Array<Dado> = Array(6) {index -> Dado()}
+    private var dados : Array<Dado> = Array(5) {index -> Dado()}
     // Arreglo de ImageView.
     private lateinit var imagenes : Array<ImageView>
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -48,7 +47,7 @@ class MainActivity : AppCompatActivity() {
         // Layout de la aplicación.
         layout = findViewById(R.id.miLayout)
         // Arreglo de imagenes de imageView.
-        imagenes = Array(6) {index -> findViewById(idImagenes[index])}
+        imagenes = Array(5) {index -> findViewById(idImagenes[index])}
         for ((index,imagen) in imagenes.withIndex()) {
             imagen.setOnClickListener(object : View.OnClickListener {
                 override fun onClick(v : View) {
