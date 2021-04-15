@@ -14,7 +14,8 @@ class JuegoBalut {
     // Valores de los dados del juego de balut inician en 1.
     var valoresDados : IntArray = IntArray(5) {1}
     // Tabla de puntuaciones para el Balut, esto va a llevar en cuenta.
-    var tablaPuntuaciones : Array<IntArray> =  Array(7) { intArrayOf(0,0,0,0) }
+    // Los valores de este arreglo empiezan en -1 indicando que aun no hay nada registrado en esa posicion.
+    var tablaPuntuaciones : Array<IntArray> =  Array(7) { intArrayOf(-1,-1,-1,-1) }
     // Variable que cuenta la cantidad de turnos totales, cuando se llega a 28 el juego termina.
     /*
     * Contadores que llevan el registro de en donde se han repartido los puntos del jugador, estos se aseguran
@@ -139,6 +140,11 @@ class JuegoBalut {
         return 0
     }
 
+    /*
+     * Calcula la puntuación de todas las categorias y las devuelve en un arreglo de enteros.
+     * las posiciones de cada puntuacion en el arreglo son las siguientes fours, fives, sixes, straight, Full House, choice y balut
+     * en las posiciones 0, 1, 2, 3, 4, 5 y 6 respectivamente.
+     */
     fun calcularTodo() : IntArray {
         val valores = intArrayOf(calcularFours(), calcularFives(), calcularSixes(), calcularStraight(), calcularFullHouse(), calcularChoice(), calcularBalut())
         return valores

@@ -11,4 +11,5 @@
     <color name="azul">#FF0000FF</color>
     <color name="azulClaro">#5cb5bd</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="transparente">#00000000</color>
 </resources>

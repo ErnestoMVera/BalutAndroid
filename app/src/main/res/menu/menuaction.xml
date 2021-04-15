@@ -3,24 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/reglas"
-        android:title="Reglas"
+        android:title="@string/reglas"
         app:showAsAction="never" />
     <item
         android:id="@+id/Historial"
-        android:title="Historial de puntuaciones"
+        android:title="@string/historial"
         app:showAsAction="never">
         <menu>
             <item
                 android:id="@+id/puntHumano"
-                android:title="Puntos Humano" />
-            <item
-                android:id="@+id/puntCPU"
-                android:title="Puntos computadora" />
-
+                android:title="@string/puntosHumano" />
         </menu>
     </item>
     <item
-        android:id="@+id/reiniciar" android:title="Reiniciar Juego"/>
+        android:id="@+id/reiniciar" android:title="@string/msjReinicio"/>
     <item
-        android:id="@+id/about" android:title="Sobre la aplicación"/>
+        android:id="@+id/about" android:title="@string/about"/>
 </menu>

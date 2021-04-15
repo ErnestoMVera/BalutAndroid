@@ -2,6 +2,7 @@ package uabc.ic.juegodados
 
 import android.content.Context
 import android.content.DialogInterface
+import android.content.Intent
 import android.content.res.Resources
 import android.graphics.drawable.Drawable
 import android.os.Bundle
@@ -75,6 +76,8 @@ class MainActivity : AppCompatActivity() {
     // Variable que cuenta los turnos restantes.
     private var turnos = 28
     private lateinit var juegoBalut: JuegoBalut
+    var registrosPuntos : ArrayList<ElementoPuntuacion> = ArrayList()
+    var colorFondo = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -120,9 +123,11 @@ class MainActivity : AppCompatActivity() {
                     rolls = 3
                     txtRollsRestantes.setText(rolls.toString())
                     reiniciarDados()
+                    registrosPuntos.add(ElementoPuntuacion(index, textosPuntos[index].getText().toString().toInt(), juegoBalut.valoresDados))
                 }
             })
         }
+        layout.setBackgroundResource(R.color.azulClaro)
         // Bloquear botones.
         bloquearBotones()
         // Poner los dados en el estado inicial de todos uno.
@@ -130,7 +135,7 @@ class MainActivity : AppCompatActivity() {
         reiniciarRolls()
         reiniciarTurnos()
         // Setear el background en azul.
-        layout.setBackgroundResource(R.color.azulClaro)
+        //layout.setBackgroundResource(R.color.azulClaro)
         // Registrar el layour para el menú flotante.
         registerForContextMenu(layout)
     }
@@ -234,11 +239,11 @@ class MainActivity : AppCompatActivity() {
                 true
             }
             R.id.puntHumano -> {
-                Toast.makeText(this, "Puntos del humano", Toast.LENGTH_SHORT).show()
-                true
-            }
-            R.id.puntCPU -> {
-                Toast.makeText(this, "Puntos del CPU", Toast.LENGTH_SHORT).show()
+                val intentPuntos = Intent(this, PuntuacionesJugador::class.java)
+                intentPuntos.putExtra("lista", registrosPuntos)
+                intentPuntos.putExtra("fondo", colorFondo)
+                startActivity(intentPuntos)
+                //Toast.makeText(this, "Puntos del humano", Toast.LENGTH_SHORT).show()
                 true
             }
             R.id.reiniciar -> {
@@ -270,13 +275,16 @@ class MainActivity : AppCompatActivity() {
         return when (item.itemId) {
             R.id.Rojo -> {
                 layout.setBackgroundResource(R.color.rojo)
+                colorFondo = 1
                 true
             }
             R.id.Azul -> {
+                colorFondo = 0
                 layout.setBackgroundResource(R.color.azulClaro)
                 true
             }
             R.id.Verde -> {
+                colorFondo = 2
                 layout.setBackgroundResource(R.color.verde)
                 true
             }
