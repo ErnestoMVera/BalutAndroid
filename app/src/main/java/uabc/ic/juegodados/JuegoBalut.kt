@@ -171,12 +171,13 @@ class JuegoBalut {
     /**
      * Calcula la puntuación final de acuerdo al juego de Balut.
      * @return Retorna la puntuación final del juego después de llenar la tabla.
+     * retorna -3 si la tabla aun no esta llena y se tiene que terminar de llenar.
      */
     fun calcularPuntuacionesFinales() : Int {
         // Si la tabla aun no esta llena no se puede calcular la puntuacion.
         tablaPuntuaciones.forEach { categorias ->
           if(categorias.count { it == -1 } > 0) {
-              return -1
+              return -3
           }
         }
         // Calcular bonus.
@@ -202,7 +203,7 @@ class JuegoBalut {
         tablaPuntuaciones[BALUT].forEach { puntos ->
             if(puntos != 0) puntuacionFinal += 2
         }
-        var final = scoreTotal()
+        val final = scoreTotal()
         if(final >= 0 && final < 300)
             puntuacionFinal += -2
         else if(final >= 300 && final < 350)

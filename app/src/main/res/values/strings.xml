@@ -3,7 +3,7 @@
     <string name="nombreJuego"> GREED DICE GAME </string>
     <string name="tirarDadoTitulo"> ROLL THE DICE </string>
     <string name="ok">OK</string>
-    <string name="MensajeAbout"> Práctica 5\nAplicación de juego de dados.\nCreada por Ernesto Vera.</string>
+    <string name="MensajeAbout">Juego Balut.\nAplicación hecha por Ernesto Vera.</string>
     <string name="AboutDados"> Contiene un dado con una cara aleatoria que se usara en el juego balut.</string>
     <string name="fours">Fours.</string>
     <string name="fives">Fives.</string>
@@ -20,4 +20,6 @@
     <string name="about">Sobre la Aplicación</string>
     <string name="reglas">Reglas</string>
     <string name="historial">Historial de puntuaciones</string>
+    <string name="highScore">Puntuación más alta: </string>
+    <string name="versionActual">Versión 2.3.2</string>
 </resources>

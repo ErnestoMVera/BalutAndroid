@@ -1,6 +1,8 @@
 package uabc.ic.juegodados
 
+import android.content.Context
 import android.content.Intent
+import android.content.res.Resources
 import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.ContextMenu
@@ -15,6 +17,9 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
+import java.io.File
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 
 class MainActivity : AppCompatActivity() {
@@ -110,10 +115,14 @@ class MainActivity : AppCompatActivity() {
                 override fun onClick(v : View) {
                     val registrado = juegoBalut.registrarPuntuacion(index, textosPuntos[index].getText().toString().toInt())
                     if(!registrado) {
-                        Toast.makeText(applicationContext, "No puede ser registrado", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(applicationContext, "No puede ser registrado, Esta categoria esta llena", Toast.LENGTH_SHORT).show()
                         return
                     }
                     turnos--
+                    if(turnos == 0) {
+                        println(juegoBalut.calcularPuntuacionesFinales())
+                        registrarPuntuacion(juegoBalut.calcularPuntuacionesFinales())
+                    }
                     txtTurnosRestantes.setText(turnos.toString())
                     bloquearBotones()
                     desbloquearRoll()
@@ -253,7 +262,11 @@ class MainActivity : AppCompatActivity() {
                 val alertDialog: AlertDialog = this.let {
                     val builder = AlertDialog.Builder(it)
                     builder.apply {
-                        setMessage(R.string.MensajeAbout)
+                        val mensaje = StringBuilder(resources.getString(R.string.highScore))
+                        mensaje.append(" ")
+                        mensaje.append(leerArchivoPuntuaciones())
+                        mensaje.append(resources.getString(R.string.MensajeAbout))
+                        setMessage(mensaje)
                         setNegativeButton(R.string.ok, null)
                     }
                     // Crear el dialogo.
@@ -297,5 +310,41 @@ class MainActivity : AppCompatActivity() {
             imagen.setImageDrawable(ContextCompat.getDrawable(applicationContext, R.drawable.dadocara1))
             dados[index].estaSeleccionado = false
         }
+    }
+    fun registrarPuntuacion(puntuacion : Int) {
+        if(puntuacion < obtenerPuntuacionMasAlta()) {
+            return
+        }
+        val file = File(applicationContext.filesDir, "puntuacionAlta")
+        file.createNewFile() // Se crea un nuevo archivo si aun no existia.
+        val registro: StringBuilder = StringBuilder()
+        registro.append(puntuacion)
+        registro.append("\n")
+        val date: LocalDateTime = LocalDateTime.now()
+        registro.append(date.format(DateTimeFormatter.ISO_LOCAL_DATE))
+        registro.append("\n")
+        applicationContext.openFileOutput("puntuacionAlta", Context.MODE_PRIVATE).use { fileStream ->
+            fileStream.write(registro.toString().toByteArray())
+        }
+    }
+    fun obtenerPuntuacionMasAlta() : Int{
+        val file = File(applicationContext.filesDir, "puntuacionAlta")
+        if(file.exists()) {
+            return applicationContext.openFileInput("puntuacionAlta").bufferedReader().readLine().toInt()
+        }
+        return -2
+    }
+
+    fun leerArchivoPuntuaciones() : String {
+        val file = File(applicationContext.filesDir, "puntuacionAlta")
+        if(!file.exists()) {
+            registrarPuntuacion(-2)
+        }
+        val registro: StringBuilder = StringBuilder()
+        applicationContext.openFileInput("puntuacionAlta").bufferedReader().forEachLine { linea ->
+            registro.append(linea)
+            registro.append("\n")
+        }
+        return registro.toString()
     }
 }
