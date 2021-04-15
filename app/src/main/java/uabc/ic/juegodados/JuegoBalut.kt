@@ -149,4 +149,63 @@ class JuegoBalut {
         val valores = intArrayOf(calcularFours(), calcularFives(), calcularSixes(), calcularStraight(), calcularFullHouse(), calcularChoice(), calcularBalut())
         return valores
     }
+
+    /**
+     * Calcula la puntuación final de acuerdo al juego de Balut.
+     * @return Retorna la puntuación final del juego después de llenar la tabla.
+     */
+    fun calcularPuntuacionesFinales() : Int {
+        // Si la tabla aun no esta llena no se puede calcular la puntuacion.
+        tablaPuntuaciones.forEach { categorias ->
+          if(categorias.count { it == -1 } > 0) {
+              return -1
+          }
+        }
+        // Calcular bonus.
+        var puntuacionFinal = 0
+        if(tablaPuntuaciones[FOURS].sum() >= 52) {
+            puntuacionFinal += 2
+        }
+        if(tablaPuntuaciones[FIVES].sum() >= 65) {
+            puntuacionFinal += 2
+        }
+        if(tablaPuntuaciones[SIXES].sum() >= 78) {
+            puntuacionFinal += 2
+        }
+        if(tablaPuntuaciones[STRAIGHT].all { it != 0 }) {
+            puntuacionFinal += 4
+        }
+        if(tablaPuntuaciones[FULLHOUSE].all { it != 0 }) {
+            puntuacionFinal += 3
+        }
+        if(tablaPuntuaciones[CHOICE].sum() >= 100) {
+            puntuacionFinal += 2
+        }
+        tablaPuntuaciones[BALUT].forEach { puntos ->
+            if(puntos != 0) puntuacionFinal += 2
+        }
+        var final = 0
+        tablaPuntuaciones.forEach {
+            final += it.sum()
+        }
+        if(final >= 0 && final < 300)
+            puntuacionFinal += -2
+        else if(final >= 300 && final < 350)
+            puntuacionFinal += -1
+        else if(final >= 350 && final < 400)
+            puntuacionFinal += 0
+        else if(final >= 400 && final < 450)
+            puntuacionFinal += 1
+        else if(final >= 450 && final < 500)
+            puntuacionFinal += 2
+        else if(final >= 500 && final < 550)
+            puntuacionFinal += 3
+        else if(final >= 550 && final < 600)
+            puntuacionFinal += 4
+        else if(final >= 600 && final < 650)
+            puntuacionFinal += 5
+        else if(final <= 812)
+            puntuacionFinal += 6
+        return puntuacionFinal
+    }
 }
