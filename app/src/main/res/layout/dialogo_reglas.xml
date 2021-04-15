@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/reglas"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        android:layout_marginBottom="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:paddingBottom="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginRight="4dp"
+                android:justificationMode="inter_word"
+                android:text="@string/reglasExplicadas"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/dados"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:justificationMode="inter_word"
+                android:text="@string/reglasDados"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/categorias"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:justificationMode="inter_word"
+                android:text="@string/reglasCategorias"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/fives" />
+            <TextView
+                android:id="@+id/reglasCat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:justificationMode="inter_word"
+                android:text="@string/categorias2"
+                android:textSize="14sp" />
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/straight" />
+            <TextView
+                android:id="@+id/reglasCat3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:justificationMode="inter_word"
+                android:text="@string/categorias3"
+                android:textSize="14sp" />
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/fullhouse" />
+            <TextView
+                android:id="@+id/reglasCat4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:justificationMode="inter_word"
+                android:text="@string/categorias4"
+                android:textSize="14sp" />
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/balut" />
+            <TextView
+                android:id="@+id/reglasCat5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:justificationMode="inter_word"
+                android:text="@string/categorias5"
+                android:textSize="14sp" />
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/puntosFinales"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/reglas8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:justificationMode="inter_word"
+                android:text="@string/explicacion7"
+                android:textSize="14sp" />
+            <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:stretchColumns="1">
+                <TableRow>
+                    <TextView
+                        android:text="@string/requerido"
+                        android:textColor="@color/rojo"
+                        android:padding="3dip" />
+                    <TextView
+                        android:text="@string/puntosDados"
+                        android:gravity="right"
+                        android:textColor="@color/rojo"
+                        android:padding="3dip" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:text="@string/extraFours"
+                        android:padding="3dip" />
+                    <TextView
+                        android:text="@string/puntos1"
+                        android:gravity="right"
+                        android:padding="3dip" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:text="@string/extraFives"
+                        android:padding="3dip" />
+                    <TextView
+                        android:text="@string/puntos1"
+                        android:gravity="right"
+                        android:padding="3dip" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:text="@string/extraSixes"
+                        android:padding="3dip" />
+                    <TextView
+                        android:text="@string/puntos1"
+                        android:gravity="right"
+                        android:padding="3dip" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:text="@string/extraStraight"
+                        android:padding="3dip" />
+                    <TextView
+                        android:text="@string/puntos3"
+                        android:gravity="right"
+                        android:padding="3dip" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:text="@string/extraFull"
+                        android:padding="3dip" />
+                    <TextView
+                        android:text="@string/puntos2"
+                        android:gravity="right"
+                        android:padding="3dip" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:text="@string/extraChoice"
+                        android:padding="3dip" />
+                    <TextView
+                        android:text="@string/puntos1"
+                        android:gravity="right"
+                        android:padding="3dip" />
+                </TableRow>
+            </TableLayout>
+            <TextView
+                android:id="@+id/reglas9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:justificationMode="inter_word"
+                android:text="@string/explicacion8"
+                android:textSize="14sp" />
+            <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:stretchColumns="1">
+                <TableRow>
+                    <TextView
+                        android:text="@string/puntFinal"
+                        android:textColor="@color/rojo"
+                        android:padding="3dip" />
+                    <TextView
+                        android:text="@string/puntosFinales"
+                        android:gravity="right"
+                        android:textColor="@color/rojo"
+                        android:padding="3dip" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:text="@string/rango1"
+                        android:padding="3dip" />
+                    <TextView
+                        android:text="@string/puntos4"
+                        android:gravity="right"
+                        android:padding="3dip" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:text="@string/rango2"
+                        android:padding="3dip" />
+                    <TextView
+                        android:text="@string/puntos5"
+                        android:gravity="right"
+                        android:padding="3dip" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:text="@string/rango3"
+                        android:padding="3dip" />
+                    <TextView
+                        android:text="@string/puntos6"
+                        android:gravity="right"
+                        android:padding="3dip" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:text="@string/rango4"
+                        android:padding="3dip" />
+                    <TextView
+                        android:text="@string/puntos7"
+                        android:gravity="right"
+                        android:padding="3dip" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:text="@string/rango5"
+                        android:padding="3dip" />
+                    <TextView
+                        android:text="@string/puntos1"
+                        android:gravity="right"
+                        android:padding="3dip" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:text="@string/rango6"
+                        android:padding="3dip" />
+                    <TextView
+                        android:text="@string/puntos2"
+                        android:gravity="right"
+                        android:padding="3dip" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:text="@string/rango7"
+                        android:padding="3dip" />
+                    <TextView
+                        android:text="@string/puntos3"
+                        android:gravity="right"
+                        android:padding="3dip" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:text="@string/rango8"
+                        android:padding="3dip" />
+                    <TextView
+                        android:text="@string/puntos8"
+                        android:gravity="right"
+                        android:padding="3dip" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:text="@string/rango9"
+                        android:padding="3dip" />
+                    <TextView
+                        android:text="@string/puntos9"
+                        android:gravity="right"
+                        android:padding="3dip" />
+                </TableRow>
+            </TableLayout>
+            <TextView
+                android:id="@+id/reglas10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:justificationMode="inter_word"
+                android:text="@string/textoFinal"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -242,6 +242,8 @@ class MainActivity : AppCompatActivity() {
         return when (item.itemId) {
             R.id.reglas -> {
                 Toast.makeText(this, "Reglas", Toast.LENGTH_SHORT).show()
+                var dialogo = DialogoReglas()
+                dialogo.show(supportFragmentManager, "Reglas")
                 true
             }
             R.id.puntHumano -> {

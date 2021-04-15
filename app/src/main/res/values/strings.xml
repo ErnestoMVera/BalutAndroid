@@ -22,4 +22,66 @@
     <string name="historial">Historial de puntuaciones</string>
     <string name="highScore">Puntuación más alta: </string>
     <string name="versionActual">Versión 2.3.2</string>
+    <string name="requerido">Requerido.</string>
+    <string name="puntosDados">Puntos Dados:</string>
+    <string name="Ok">OK.</string>
+    <string name="dados">Dados.</string>
+    <string name="categorias">Categorias.</string>
+    <string name="categorias5">Puntúa 25 puntos en la categoría de balut. (5x1 + 20).</string>
+    <string name="puntosFinales">Puntos Finales.</string>
+    <string name="puntos1">2 puntos</string>
+    <string name="puntos2">3 puntos</string>
+    <string name="puntos3">4 puntos</string>
+    <string name="extraFours">52 o más en cuatros.</string>
+    <string name="extraFives">65 o más en cincos.</string>
+    <string name="extraSixes">78 o más en seises.</string>
+    <string name="extraStraight">Todos los straights.</string>
+    <string name="extraFull">Todos los full house.</string>
+    <string name="extraChoice">100 o más en choice.</string>
+    <string name="rango1">0-299</string>
+    <string name="rango2">300-349</string>
+    <string name="rango3">350-399</string>
+    <string name="rango4">400-449</string>
+    <string name="rango5">450-499</string>
+    <string name="rango6">500-549</string>
+    <string name="rango7">550-599</string>
+    <string name="rango8">600-649</string>
+    <string name="rango9">650-812</string>
+    <string name="puntos4">-2 puntos</string>
+    <string name="puntos5">-1 puntos</string>
+    <string name="puntos6">0 puntos</string>
+    <string name="puntos7">1 punto</string>
+    <string name="puntos8">5 puntos</string>
+    <string name="puntos9">6 puntos</string>
+    <string name="puntFinal">Puntuación</string>
+    <string name="textoFinal">29 puntos es la puntuación máxima teórica que se puede lograr.</string>
+    <string name="explicacion8">También hay puntos por cada balut exitoso, 2 puntos por cada balut.
+\n\nFinalmente los puntos son dados de acuerdo de los criterios de la siguiente tabla:
+</string>
+    <string name="explicacion7">Al final del juego ganas puntos por categoría. Para conseguir puntos debes cumplir ciertos criterios por cada categoría. A continuación una tabla con los criterios.</string>
+    <string name="reglasExplicadas">El Balut es un juego que fue inventado al final de la segunda guerra mundial por un soldado estadounidense que no tenía cartas para jugar poker.
+\nLas reglas que se mostrarán a continuación fueron inventadas en 1979 por Søren Milholt.
+\nEl juego consiste en 28 turnos. En cada turno tiras los dados y decides generar una puntuación en una de 7 categorías. Durante los 28 turnos tienes que puntuar en cada categoría 4 veces. Esto significa que tal vez en algún momento durante el juego tendrás que decidir puntuar cero en alguna categoría. Si la puntuación total en cada categoría cumple con los requisitos para esa categoría te ganas algunos puntos finales extras, aunque una de las categorías es especial. El objetivo del juego es maximizar el número de puntos finales.
+</string>
+    <string name="categorias4">Este es un full house, 3 cincos y 2 cuatros. Esto puntúa 23 (5+5+5+4+4) en la categoría full house.
+\nChoice.
+\nEn esta categoría puede salir lo que sea, la puntuación en esta categoría solo es la suma de todas las caras de los dados.
+\nBalut.
+\nUn balut son cinco caras de un dado del mismo tipo (que todos los dados tengan el mismo número) y da una puntuación de 20 más la suma de las caras de los dados.
+\nPor ejemplo:
+</string>
+    <string name="categorias3">Es una escalera pequeña. Se podría puntuar en straights con una puntuación de 15.
+\nFull House.
+\nOtra vez como en Poker, un full house es cuando tienes 3 dados iguales y un par. Puntuar en full house lleva a una puntuación de la suma de todos los dados.
+\nPor ejemplo:
+</string>
+    <string name="categorias2">si escoges puntuar en la categoría de cincos la puntuación sería de 15. Este mismo roll resultaría en cero si puntúas en la categoría de seises o 4 si escoges puntuar en la categoría de cuatros.
+\nStraights (Escalera).
+\nLa cuarta categoría se llama straights o escalera en español. Como en el poker es cuando tienes una secuencia de números consecutivos en las caras de los dados que tiraste. Una escalera grande son 5 caras de los dados consecutivas empezando en 2 y terminando en 6, y una escalera pequeña consiste en 5 caras consecutivas empezando por 1 y terminando en 5. Una escalera grande da una puntuación de 20 (2+3+4+5+6) y una escalera pequeña da una puntuación de 15 (1+2+3+4+5).
+\nPor ejemplo:
+</string>
+    <string name="reglasCategorias">Fours, Fives and sixes (cuatros, cincos y seises).
+\nEn las primeras 6 categorías se suma solo el total de una de las caras. \npor ejemplo:
+</string>
+    <string name="reglasDados">Se tienen 5 dados que puedes arrojar. En el primer lanzamiento debes lanzar todos los dados. Después de lanzar todos los dados puedes escoger puntuar en una de las categorías o volver a tirar los dados cualquiera de los dados o todos. Presiona sobre los dados que no quieres volver a tirar y presiona el botón “ROLL THE DICE” para tirar de nuevo los dados que no seleccionaste. Puedes tirar los dados un total de tres veces por turno, el tiro inicial y dos tiros extras de cualquiera (esto significa que puedes tirar de nuevo cuántos dados quieras) o todos los dados. Una vez puntuaste en una de las categorías continuas tirando los dados hasta que hayas puntuado 4 veces en cada categoría, cuando eso ocurre, el juego termina.</string>
 </resources>
