@@ -2,7 +2,6 @@ package uabc.ic.juegodados
 
 import android.content.Context
 import android.content.Intent
-import android.content.res.Resources
 import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.ContextMenu
@@ -242,7 +241,7 @@ class MainActivity : AppCompatActivity() {
         return when (item.itemId) {
             R.id.reglas -> {
                 Toast.makeText(this, "Reglas", Toast.LENGTH_SHORT).show()
-                var dialogo = DialogoReglas()
+                val dialogo = DialogoReglas()
                 dialogo.show(supportFragmentManager, "Reglas")
                 true
             }
@@ -256,7 +255,13 @@ class MainActivity : AppCompatActivity() {
             }
             R.id.reiniciar -> {
                 reiniciarDados()
-                Toast.makeText(this, R.string.msjReinicio, Toast.LENGTH_SHORT).show()
+                juegoBalut = JuegoBalut()
+                registrosPuntos.clear()
+                turnos = 28
+                txtTurnosRestantes.setText(turnos.toString())
+                rolls = 3
+                bloquearBotones()
+                txtRollsRestantes.setText(rolls.toString())
                 true
             }
             R.id.about -> {
