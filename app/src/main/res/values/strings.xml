@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">JuegoDados</string>
-    <string name="nombreJuego"> GREED DICE GAME </string>
+    <string name="nombreJuego"> Balut! </string>
     <string name="tirarDadoTitulo"> ROLL THE DICE </string>
     <string name="ok">OK</string>
     <string name="MensajeAbout">Juego Balut.\nAplicación hecha por Ernesto Vera.</string>
@@ -38,15 +38,15 @@
     <string name="extraStraight">Todos los straights.</string>
     <string name="extraFull">Todos los full house.</string>
     <string name="extraChoice">100 o más en choice.</string>
-    <string name="rango1">0-299</string>
-    <string name="rango2">300-349</string>
-    <string name="rango3">350-399</string>
-    <string name="rango4">400-449</string>
-    <string name="rango5">450-499</string>
-    <string name="rango6">500-549</string>
-    <string name="rango7">550-599</string>
-    <string name="rango8">600-649</string>
-    <string name="rango9">650-812</string>
+    <string name="rango1">0–299</string>
+    <string name="rango2">300–349</string>
+    <string name="rango3">350–399</string>
+    <string name="rango4">400–449</string>
+    <string name="rango5">450–499</string>
+    <string name="rango6">500–549</string>
+    <string name="rango7">550–599</string>
+    <string name="rango8">600–649</string>
+    <string name="rango9">650–812</string>
     <string name="puntos4">-2 puntos</string>
     <string name="puntos5">-1 puntos</string>
     <string name="puntos6">0 puntos</string>
@@ -54,6 +54,10 @@
     <string name="puntos8">5 puntos</string>
     <string name="puntos9">6 puntos</string>
     <string name="puntFinal">Puntuación</string>
+    <string name="descEjemploDados">Ejemplo de dados</string>
+    <string name="descEjemploStraight">Ejemplo Straight</string>
+    <string name="descEjemploFullHouse">Ejemplo Full house</string>
+    <string name="descEjemploBalut">Ejemplo Balut</string>
     <string name="textoFinal">29 puntos es la puntuación máxima teórica que se puede lograr.</string>
     <string name="explicacion8">También hay puntos por cada balut exitoso, 2 puntos por cada balut.
 \n\nFinalmente los puntos son dados de acuerdo de los criterios de la siguiente tabla:

@@ -240,7 +240,6 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.reglas -> {
-                Toast.makeText(this, "Reglas", Toast.LENGTH_SHORT).show()
                 val dialogo = DialogoReglas()
                 dialogo.show(supportFragmentManager, "Reglas")
                 true
